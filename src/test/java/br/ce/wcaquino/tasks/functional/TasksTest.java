@@ -10,16 +10,18 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class TasksTest {
 	
-	public WebDriver acessarAplicacao() {
+	public WebDriver acessarAplicacao(){
 		
 		WebDriver driver = new ChromeDriver();
+//		DesiredCapabilities cap = DesiredCapabilities.chrome();
+//		WebDriver driver = new RemoteWebDriver(new URL("http://192.168.56.1:4444/wd/hub"),cap);
 		driver.navigate().to("http://localhost:8001/tasks");
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		return driver;
 	}
 	
 	@Test
-	public void deveSalvarTarefaComSucesso() {
+	public void deveSalvarTarefaComSucesso(){
 		
 		WebDriver driver = acessarAplicacao();
 		
@@ -37,7 +39,7 @@ public class TasksTest {
 	}
 
 	@Test
-	public void naoDeveSalvarTarefaComDataPassada() {
+	public void naoDeveSalvarTarefaComDataPassada(){
 		
 		WebDriver driver = acessarAplicacao();
 		
@@ -55,7 +57,7 @@ public class TasksTest {
 	}
 	
 	@Test
-	public void naoDeveSalvarTarefasSemDescricao() {
+	public void naoDeveSalvarTarefasSemDescricao(){
 		
 		WebDriver driver = acessarAplicacao();
 		
@@ -72,7 +74,7 @@ public class TasksTest {
 	}
 	
 	@Test
-	public void naoDeveSalvarTarefasSemData() {
+	public void naoDeveSalvarTarefasSemData(){
 		
 		WebDriver driver = acessarAplicacao();
 		
